@@ -1,6 +1,11 @@
 package sort;
 
-import java.util.Random;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import static sort.PublicMethod.getArr;
+import static sort.PublicMethod.swap;
 
 /**
  * @author panghu
@@ -10,54 +15,33 @@ import java.util.Random;
  */
 public class SelectSort {
 
-    private static int[] getArr(int length){
-        int[] arr = new int[length];
-        Random random = new Random(0);
-        for (int i = 0; i < length; i++) {
-            arr[i] = random.nextInt(100)+1;
-        }
-        return arr;
-    }
 
-    public static void main(String[] args) {
-        int length = 20;
-        int[] arr = getArr(length);
-        System.out.println("排序前：");
-        for (int a:arr
-        ) {
-            System.out.print(a + " ");
-        }
-        System.out.println("\n排序后：");
-        int[] result =  selectSort(arr);
-        for (int a:result
-             ) {
-            System.out.print(a + " ");
-        }
-    }
+    /*
+    算法复杂度 o n*2
+    * 从第一个开始寻找最值
+    * 寻找的方式遇到比它小的值就进行记录 较小值的下标  这样遍历一遍下来 记录的就是最小值的
+    * */
+
 
     /*
     * 第一步  找到最小值，记录位置
     * 第二步  交换位置
     * */
 
-    private static int[] selectSort(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
+    static int[] selectSort(int[] arr){
+        for (int i=0;i<arr.length;i++){
+            //假设最小值所在的位置在当前位置
             int minIndex = i;
-            for(int j = i+1;j < arr.length;j++){
-                if (arr[j]<arr[minIndex]){
+            for (int j = i+1;j < arr.length;j++)
+            {
+                if (arr[j] < arr [minIndex]){
+                    //重新记录最小值的位置
                     minIndex = j;
                 }
-                swap(arr,minIndex,i);
             }
+            swap(arr,i,minIndex);
         }
         return arr;
-    }
-
-    private static void swap(int[] arr,int x,int y){
-        int temp;
-        temp  = arr[x];
-        arr[x] = arr[y];
-        arr[y] = temp;
     }
 
 }
