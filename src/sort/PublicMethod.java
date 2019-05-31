@@ -3,7 +3,6 @@ package sort;
 import java.util.Random;
 
 import static sort.InsertSelect.insertSort;
-import static sort.SelectSort.selectSort;
 
 /**
  * @author panghu
