@@ -23,6 +23,10 @@ public class QuickSort {
         quickSort(arr,position+1,r);
     }
 
+    /*
+    * 对arr[l...r]部分进行partition操作
+    * 返回position,是的arr[l...p-1]<arr[p],arr[p+1...r]>arr[p]
+    * */
     static int partition(int[] arr,int left,int right){
 
         int value = arr[left];
@@ -39,6 +43,8 @@ public class QuickSort {
             }
         }
 
+        //走到这一步的时候  arr[l]存放的是分解值,arr[position]存放的是小于分界值
+        //自我感觉这一步  有一种一举两得,即将分界值的位置移到了正确位置,也将左值放在了左边
         swap(arr,left,position);
         return position;
 
