@@ -1,4 +1,4 @@
-package test;
+package practice;
 
 /**
  * @author panghu
@@ -40,5 +40,9 @@ public class Student {
 
     public void selfIntroduce(){
         System.out.println("Hello,everyone in the class,my name is"+this.name);
+    }
+
+    public void test(){
+        int[] arr = new int[100];
     }
 }

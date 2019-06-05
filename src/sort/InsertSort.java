@@ -4,11 +4,11 @@ import static sort.PublicMethod.swap;
 
 /**
  * @author panghu
- * @title: InsertSelect
+ * @title: InsertSort
  * @projectName Algorithm_And_Data_Structure
  * @date 19-5-26 下午7:59
  */
-class InsertSelect {
+class InsertSort {
 
     /*
     * 算法复杂度 o n*2

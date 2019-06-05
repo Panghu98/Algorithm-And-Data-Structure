@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Random;
 
-import static sort.InsertSelect.insertSort;
+import static sort.InsertSort.insertSort;
 
 /**
  * @author panghu
@@ -10,7 +10,7 @@ import static sort.InsertSelect.insertSort;
  * @projectName Algorithm_And_Data_Structure
  * @date 19-5-27 上午8:06
  */
-class PublicMethod {
+public class PublicMethod {
 
     static int[] getArr(int length){
         int[] arr = new int[length];
@@ -28,7 +28,7 @@ class PublicMethod {
      * @param x 下标
      * @param y 下标
      */
-    static void swap(int[] arr, int x, int y){
+    public static void swap(int[] arr, int x, int y){
         int temp;
         temp  = arr[x];
         arr[x] = arr[y];

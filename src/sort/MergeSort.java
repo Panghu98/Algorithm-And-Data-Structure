@@ -56,8 +56,8 @@ public class MergeSort {
 
           //这里只是完成了部分的排序，所以位置应该是这段范围内的left到right
           //注意这里是小于等于
-          for (int i = left; i <= right; i++) {
-              arr[i] = temp[i];
+          if (right + 1 - left >= 0) {
+              System.arraycopy(temp, left, arr, left, right + 1 - left);
           }
       }
 
@@ -66,8 +66,9 @@ public class MergeSort {
         int[] a = { 49, 38, 65, 97, 76, 13, 27, 50 };
         mergeSort(a, 0, a.length-1);
         System.out.println("排好序的数组：");
-        for (int e : a)
+        for (int e : a) {
             System.out.print(e+" ");
+        }
     }
 
 
