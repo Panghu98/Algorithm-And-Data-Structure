@@ -27,13 +27,13 @@ public class QuickSort {
     * 对arr[l...r]部分进行partition操作
     * 返回position,是的arr[l...p-1]<arr[p],arr[p+1...r]>arr[p]
     * */
-    static int partition(int[] arr,int left,int right){
+    public static int partition(int[] arr,int left,int right){
 
         int value = arr[left];
 
         int position = left;
         //这里的right值是最右边的值 arr[right]是有效的
-        for (int i=left+1;i<right+1;i++){
+        for (int i=left+1;i<=right;i++){
             if (arr[i] < value){
                 /*
                 * 相关的操作

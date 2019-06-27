@@ -11,7 +11,7 @@ import org.junit.Test;
 public class MergeSortTest {
 
    void mergeSort(int[] arr,int left,int right){
-       if (left<right){
+       if(left < right){
            int mid = (left+right)/2;
            mergeSort(arr,left,mid);
            mergeSort(arr,mid+1,right);
@@ -20,29 +20,30 @@ public class MergeSortTest {
    }
 
    void merge(int[] arr,int left,int mid,int right){
-       //创建一个临时数组,存放排序后的数组
+
+       //创建临时数组
        int[] temp = new int[arr.length];
 
-       //创建数组下表索引
-       int p1 = left,k = left,p2 = mid+1;
+       //创建数组下标
+       int p1=left,p2 = mid+1,k = left;
 
-        while(p1 <= mid && p2 <= right ){
-            if (arr[p1]<=arr[p2]){
-                temp[k++] = arr[p1++];
-            }else{
-                temp[k++] = arr[p2++];
-            }
-        }
+       while (p1 <= mid && p2 <= right){
+           if (arr[p1] >= arr[p2]){
+               temp[k++] = arr[p2++];
+           }else {
+               temp[k++] = arr[p1++];
+           }
+       }
 
-        while (p1 <= mid){
-            temp[k++] = arr[p1++];
-        }
+       while (p1 <= mid){
+           temp[k++] = arr[p1++];
+       }
 
-        while (p2 <= right){
-            temp[k++] = arr[p2++];
-        }
+       while (p2 <= right){
+           temp[k++] = arr[p2++];
+       }
 
-        System.arraycopy(temp,left,arr,left,right+1-left);
+       System.arraycopy(temp,left,arr,left,right+1-left);
 
    }
 
