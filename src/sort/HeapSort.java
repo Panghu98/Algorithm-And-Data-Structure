@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 /**
  * @author panghu
  * @title: HeapSort
@@ -33,6 +35,7 @@ public class HeapSort {
 
             //上移到父节点
             arr[s] = arr[j];
+            //  传出参数j s
             s = j;
 
         }
@@ -44,16 +47,17 @@ public class HeapSort {
 
     int[] arr;
 
-    void heapSort(int[] arr){
+     void heapSort(int[] arr){
 
         //对数组进行建堆操作,就是从最后一个非叶子节点进行筛选的结果
-        //因为0没有使用,所以length-1
+        //(arr.length-1)/2   父节点
         for (int i = (arr.length-1)/2;   i>0;  i--){
             heapAdjust(arr,i,arr.length-1);
         }
         System.out.println("--------建堆完成-------");
 
         System.err.print("堆中的数据为:  ");
+
         //输出队列  数组的下标从1开始
         outputArr(1);
 
@@ -66,13 +70,15 @@ public class HeapSort {
 
         }
 
+         System.out.println();
+         System.out.println(Arrays.toString(arr));
 
     }
 
 
     void outputArr(int i){
 
-        if (i <= arr[0]){
+        if (i <= arr.length-1){
             System.out.print(arr[i]+" ");
             //输出左子节点
             outputArr(i*2);
@@ -88,15 +94,10 @@ public class HeapSort {
         HeapSort heapSort = new HeapSort();
 
         //0下标放的是数组长度
-        int[] arr = {7,23,45,9,40,73,12,49};
+        int[] arr = {8,23,45,9,40,73,12,13,72};
         heapSort.arr = arr;
         heapSort.heapSort(arr);
 
-        System.out.println();
-
-        for (int i = 0;i <arr.length;i++){
-            System.out.print("--"+arr[i]);
-        }
 
     }
 
