@@ -1,8 +1,7 @@
 package practice;
 
 import org.junit.Test;
-
-import java.util.Random;
+import sort.PublicMethod;
 
 import static sort.PublicMethod.swap;
 
@@ -10,51 +9,50 @@ import static sort.PublicMethod.swap;
  * @author panghu
  * @title: QuickSort
  * @projectName Algorithm_And_Data_Structure
- * @date 19-6-17 上午9:53
+ * @date 19-6-27 下午6:46
  */
 public class QuickSort {
 
-    void quickSort(int[] arr,int left,int right){
-        if (left>right){
+    public void quickSort(int[] arr,int left,int right){
+
+        if (left >= right){
             return;
         }
-        int position = partition(arr,left,right);
-        quickSort(arr,left,position-1);
-        quickSort(arr,position+1,right);
+        int partition = partition(arr, left, right);
+        quickSort(arr,left,partition-1);
+        quickSort(arr,partition+1,right);
+
+
     }
 
-    int partition(int[] arr,int left,int right){
+    public static int partition(int[] arr, int left, int right){
 
-        int value  = arr[left];
-        int position = left;
+        //记录起始的位置
+        int start = left;
 
-        for (int i = left+1; i < right+1; i++) {
+        for (int i=left+1;i<=right;i++){
 
-            if (arr[i] < value){
-                swap(arr,i,++position);
+            if (arr[i] < arr[left] ){
+
+                swap(arr, i, ++start);
+
             }
 
         }
-        swap(arr,left,position);
-        return position;
+
+        swap(arr,left,start);
+        return start;
+
     }
+
     @Test
     public void test(){
-        int[] a = new int[12];
-        Random random = new Random(12);
-        for (int i = 0; i < 10; i++) {
-            int num = random.nextInt(2000)+1;
-            a[i] = num;
-        }
-        long start = System.nanoTime();
-        System.out.println();
+        int[] a = { 49, 38, 65, 97, 76, 13, 27, 50 };
         quickSort(a,  0,a.length-1);
-        long end = System.nanoTime();
         System.err.println("排好序的数组：");
         for (int e : a) {
             System.out.print(e+" ");
         }
-        System.out.println("\n排序算法总耗时"+(end-start)+"  ns");
     }
 
 }
