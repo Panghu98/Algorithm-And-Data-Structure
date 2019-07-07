@@ -49,5 +49,33 @@
  * 数组最好应用于 索引有语意(素组下表有实际的意义) 的情况
  * 但是并非所有的有语意的索引都适用于数组 
  
+ ## 栈
+ * 栈是一种线性结构
+ * 相比数组,栈对应的操作是数组的子集
+ * 只能从一端添加元素,也从一端去除元素
+ * 栈是一种后进先出的数据结构
+ 
+ ### 栈的应用
+ * 无处不在的Undo操作 (出栈操作)
+ * 程序调用的系统栈
+ ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/栈的调用.png)
+ 当B方法调用C方法完毕之后,继续B方法的执行,B方法执行完毕之后 将B方法从系统站出栈
+ * 栈的复杂度分析
+ ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/栈复杂度分析.png)
+  
+  ## 队列
+  * 队列也是一种线性结构
+  * 相比数组,队列对应的操作是数组的子集
+  * 只能从队尾添加元素,只能从队首取出元素
+  * 队列是一种先进先出的数据结构
+  
+  ### 数组队列的复杂度分析
+  ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/数组队列复杂度分析.png)
+  
+  
+ 
+ 
+ 
+ 
     
     
