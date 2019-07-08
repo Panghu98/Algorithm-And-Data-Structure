@@ -125,20 +125,7 @@ public class Array<E> {
         data[index] = e;
     }
 
-    @Override
-    public String toString(){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("Array : size = %d,capacity = %d\n",size,data.length));
-        stringBuilder.append('[');
-        for (int i = 0; i < size; i++) {
-            stringBuilder.append(data[i]);
-            if (i!=size-1){
-                stringBuilder.append(", ");
-            }
-        }
-        stringBuilder.append(']');
-        return stringBuilder.toString();
-    }
+
 
     //查看数组中是否包含元素e
     public boolean contains(E e){
@@ -200,6 +187,21 @@ public class Array<E> {
         if (index != -1){
             remove(index);
         }
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(String.format("Array : size = %d,capacity = %d\n",size,data.length));
+        stringBuilder.append('[');
+        for (int i = 0; i < size; i++) {
+            stringBuilder.append(data[i]);
+            if (i!=size-1){
+                stringBuilder.append(", ");
+            }
+        }
+        stringBuilder.append(']');
+        return stringBuilder.toString();
     }
 
 }

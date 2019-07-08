@@ -72,6 +72,23 @@
   ### 数组队列的复杂度分析
   ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/数组队列复杂度分析.png)
   
+  ### 循环队列  -- 类似于时钟
+  * front == tail队列为空  front指向的是队首,tail指向的是最后一个元素的下一个位置
+  * (tail+1)%capacity == front 队列满
+  ### 循环队列复杂度分析
+  ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/循环队列复杂度分析.png)
+  
+  ## 小结
+  线性数据结构 -- 底层依托静态数组;靠热死则解决固定容量的问题
+  * 动态数组
+  * 栈
+  * 队列
+  ### 真正的动态数据结构 -- 链表
+  * 优点:真正的动态,不需要处理固定容量的问题
+  * 缺点:上市了随机访问的能力
+  
+  
+  
   
  
  
