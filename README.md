@@ -86,6 +86,8 @@
   ### 真正的动态数据结构 -- 链表
   * 优点:真正的动态,不需要处理固定容量的问题
   * 缺点:上市了随机访问的能力
+  ### 链表的时间复杂度分析
+  ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/链表的时间复杂度分析.png)
   
   
   
