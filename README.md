@@ -5,8 +5,20 @@
  ### 虽然实在同一个时间复杂度 但是还会有常数上的差异
 
 
-快速排序
+## 快速排序
 ![快速排序](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/快速排序.png)
+## 三路快速排序算法
+* 之前的快速排序算法都是将序列分成<=v和>v或者是<v和>=v的两个部分，而三路快速排序是
+  将序列分成三个部分:<v、=v、>v 进行排序
+![三路快速排序算法](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/三路快速排序p1.png)
+
+  ![三路快速排序算法](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/三路快速排序算法p2.png)
+  
+  ![三路快速排序算法](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/p3.png)
+
+  ![三路快速排序算法](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/p4.png)
+   
+  ![三路快速排序算法](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/p5.png)
 
 
  ### 队列
@@ -88,6 +100,7 @@
   * 缺点:上市了随机访问的能力
   ### 链表的时间复杂度分析
   ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/链表的时间复杂度分析.png)
+  
   
   
   
