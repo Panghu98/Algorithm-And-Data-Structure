@@ -2,7 +2,7 @@ package leetcode;
 
 /**
  * @author panghu
- * @title: Solution70
+ * @title: 动态规划  从上向下
  * @projectName Algorithm_And_Data_Structure
  * @date 19-7-13 下午6:50
  */
@@ -21,8 +21,14 @@ public class Solution70 {
     }
 
     public static void main(String[] args) {
+        for (int i = 5; i < 41; i+= 5) {
+            long start = System.nanoTime();
 
-        System.out.println(climbStairs(40));
+            climbStairs(i);
+            long end = System.nanoTime();
+
+            System.out.println("当n="+i+"算法总耗时"+(end-start)+"  ns");
+        }
     }
 
 }
