@@ -35,6 +35,7 @@ public class MergeSort {
           //p1,p2是检测指针，k是存放指针
           int p1=left,p2=mid+1,k=left;
 
+          //在两个都未到达边界之前
           while (p1<=mid && p2<=right){
               if (arr[p1] <= arr[p2]){
                   //先获取值，再自增
