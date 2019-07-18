@@ -1,7 +1,5 @@
 package leetcode;
 
-import array.Array;
-
 import java.util.Arrays;
 
 /**
@@ -58,7 +56,7 @@ public class Solution88 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1,2,3};
+        int[] arr = {1,2,3,0,0,0};
         int[] arr2 = {1,2,3};
 
         merge(arr,3,arr2,3);
