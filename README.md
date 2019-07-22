@@ -6,7 +6,6 @@
 
 
 ## 快速排序
-![快速排序](https://github.com/Panghu98/algorithm-data-structure/blob/master/picture/快速排序.png)
 ## 三路快速排序算法
 * 之前的快速排序算法都是将序列分成<=v和>v或者是<v和>=v的两个部分，而三路快速排序是
   将序列分成三个部分:<v、=v、>v 进行排序
