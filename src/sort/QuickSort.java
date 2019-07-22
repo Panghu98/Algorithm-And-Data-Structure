@@ -37,7 +37,7 @@ public class QuickSort {
             if (arr[i] < value){
                 /*
                 * 相关的操作
-                * 1.比初始位置大的数都放在初始位置的右边一个,放一个position的位置增加一
+                * 1.比初始位置大或者是等于的数都放在初始位置的右边一个,放一个position的位置增加一
                 * */
                 swap(arr,i,++position);
             }
