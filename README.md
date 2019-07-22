@@ -6,6 +6,8 @@
 
 
 ## 快速排序
+## 两路排序算法
+ ![两路快速排序算法](https://github.com/Panghu98/algorithm-data-structure/blob/master/picture/两路快排.png)
 ## 三路快速排序算法
 * 之前的快速排序算法都是将序列分成<=v和>v或者是<v和>=v的两个部分，而三路快速排序是
   将序列分成三个部分:<v、=v、>v 进行排序
@@ -50,7 +52,7 @@
  ![](https://github.com/Panghu98/algorithm-data-structure/blob/master/picture/排序算法总结.png)
  
  ##### 稳定排序：对于相等的元素，在排序后，原来靠前的元素依然靠前，相等元素的相对位置没有发生改变
- ![](/home/panghu/IdeaProjects/Algorithm_And_Data_Structure/picture/Algorithm_stable.png)
+ ![](https://github.com/Panghu98/algorithm-data-structure/blob/master/picture/Algorithm_stable.png)
  * 排序之后这三个数字的顺序依旧是按照红绿蓝来排序的　（稳定的排序）
  　
  
@@ -109,4 +111,4 @@
  
  
     
-    
+   
