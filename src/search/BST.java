@@ -184,6 +184,7 @@ public class BST<K,E extends Comparable<E>> {
         if (node.left == null){
             //node.right为空也不影响
             Node rightNode = node.right;
+            //release memory
             node.right = null;
             size--;
             //返回这一步,就将node.right的节点变成了父亲节点
@@ -211,12 +212,75 @@ public class BST<K,E extends Comparable<E>> {
     private Node removeMax(Node node){
         if (node.right == null){
             Node leftNode = node.left;
+            //release memory
             node.left = null;
             size--;
             return leftNode;
         }
         node.right = removeMax(node.right);
         return node;
+    }
+
+
+    /**
+     * 删除任意节点
+     * @param data
+     */
+    public void remove(E data){
+        //改变根节点引用关系
+        root = remove(root,data);
+    }
+
+    /**
+     * @param node  传入的节点
+     * @param e 数值
+     * @return
+     */
+    private Node remove(Node node,E e){
+        //判断遍历完成之后找到节点没有
+        if (node == null){
+            return null;
+        }
+
+        //不等的情况进行递归查找
+
+        //如果目标值比节点值小,节点向左边移动
+        if (e.compareTo(node.data) < 0){
+            node.left = remove(node.left,e);
+            return node;
+
+            //如果目标值比节点值大,节点向右边边移动
+        }else if (e.compareTo(node.data) > 0){
+            node.right = remove(node.right,e);
+            return node;
+        }else {
+
+            //e == node.data,找到节点
+
+            //寻找最值
+            if (node.left == null){
+                Node rightNode = node.right;
+                //释放内存
+                node.right = null;
+                size --;
+                return rightNode;
+            }
+
+            if (node.right == null){
+                Node leftNode = node.left;
+                node.left = null;
+                size--;
+                return leftNode;
+            }
+
+            Node successor = getMin(node.right);
+            successor.right = removeMin(node.right);
+            successor.left = node.left;
+
+
+            node.left = node.right = null;
+            return successor;
+        }
     }
 
     /*
