@@ -227,7 +227,7 @@ public class BST<K,E extends Comparable<E>> {
      * @param data
      */
     public void remove(E data){
-        //改变根节点引用关系
+        //记录根节点位置
         root = remove(root,data);
     }
 
@@ -257,7 +257,7 @@ public class BST<K,E extends Comparable<E>> {
 
             //e == node.data,找到节点
 
-            //寻找最值
+            //左右为空时的处理
             if (node.left == null){
                 Node rightNode = node.right;
                 //释放内存
