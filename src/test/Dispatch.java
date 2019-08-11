@@ -15,7 +15,7 @@ public class Dispatch {
 
     public static class Father{
         public void hardChoice(QQ arg){
-            System.out.println("Father choice demo");
+        System.out.println("Father choice QQ");
         }
 
         public void hardChoice(_360 arg){
