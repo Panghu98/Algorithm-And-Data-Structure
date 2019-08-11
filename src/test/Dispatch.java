@@ -1,0 +1,45 @@
+package test;
+
+/**
+ * @author panghu
+ * @Title: Dispatch
+ * @ProjectName algorithm-data-structure
+ * @Description: TODO
+ * @date 19-8-9 上午11:13
+ */
+public class Dispatch {
+
+    static class QQ{}
+
+    static class _360{}
+
+    public static class Father{
+        public void hardChoice(QQ arg){
+            System.out.println("Father choice QQ");
+        }
+
+        public void hardChoice(_360 arg){
+            System.out.println("Father choice 360");
+        }
+    }
+
+    public static class Son extends Father{
+        @Override
+        public void hardChoice(QQ arg){
+            System.out.println("Son choice QQ");
+        }
+
+        @Override
+        public void hardChoice(_360 arg){
+            System.out.println("Son choice 360");
+        }
+    }
+
+    public static void main(String[] args) {
+        Father father = new Father();
+        Father son = new Son();
+        father.hardChoice(new _360());
+        son.hardChoice(new QQ());
+    }
+
+}
