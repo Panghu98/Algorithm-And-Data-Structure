@@ -19,7 +19,7 @@ public class Dispatch {
         }
 
         public void hardChoice(_360 arg){
-            System.out.println("Father choice 360");
+            System.out.println("Father choice 360安全");
         }
     }
 
