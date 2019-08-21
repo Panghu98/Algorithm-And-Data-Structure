@@ -2,6 +2,7 @@ package list;
 
 import stack.Stack;
 
+
 /**
  * 将链表的头部作为栈顶
  * @author panghu
