@@ -50,6 +50,7 @@ public class BST<E extends Comparable<E>> {
         else if(e.compareTo(node.e) > 0)
             node.right = add(node.right, e);
 
+        //如果相等则退出循环
         return node;
     }
 
