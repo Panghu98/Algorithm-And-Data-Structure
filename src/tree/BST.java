@@ -255,8 +255,6 @@ public class BST<E extends Comparable<E>> {
             // 待删除节点左子树为空的情况
             if(node.left == null){
                 Node rightNode = node.right;
-                E value = rightNode.e;
-                System.out.println(value);
                 node.right = null;
                 size --;
                 //将值返回给上一个递归函数
@@ -274,6 +272,8 @@ public class BST<E extends Comparable<E>> {
             }
 
             // 待删除节点左右子树均不为空的情况
+
+            //使用左子树中最大的节点或者是右子树最小的节点
 
             // 找到比待删除节点大的最小节点, 即待删除节点右子树的最小节点
             // 用这个节点顶替待删除节点的位置
