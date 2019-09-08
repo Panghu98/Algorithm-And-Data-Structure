@@ -241,6 +241,8 @@ public class BST<E extends Comparable<E>> {
             return null;
 
         if( e.compareTo(node.e) < 0 ){
+            //node.left这一步就是一个赋值操作,连接作用,
+            //使得递归关系中还保持着联系
             node.left = remove(node.left , e);
             return node;
         }
@@ -253,14 +255,19 @@ public class BST<E extends Comparable<E>> {
             // 待删除节点左子树为空的情况
             if(node.left == null){
                 Node rightNode = node.right;
+                E value = rightNode.e;
+                System.out.println(value);
                 node.right = null;
                 size --;
+                //将值返回给上一个递归函数
                 return rightNode;
             }
 
             // 待删除节点右子树为空的情况
             if(node.right == null){
                 Node leftNode = node.left;
+                E value = leftNode.e;
+                System.out.println(value);
                 node.left = null;
                 size --;
                 return leftNode;
@@ -310,19 +317,17 @@ public class BST<E extends Comparable<E>> {
     public static void main(String[] args) {
         BST<Integer> bst = new BST<>();
         Random random = new Random(1);
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 8; i++) {
             int x = random.nextInt(100);
             System.out.print(x+ " ");
             bst.add(x);
         }
 
-        System.out.println();
-        bst.preOrder();
+
+        bst.remove(4);
 
         System.out.println();
-        bst.add(47);
         bst.preOrder();
-
 
 
     }

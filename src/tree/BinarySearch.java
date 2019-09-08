@@ -67,7 +67,6 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,7,8,9};
-        System.err.println(binarySearch2(arr,0,arr.length-1,3));
         System.out.println(binarySearch(arr,arr.length,3));
     }
 
