@@ -23,12 +23,13 @@
   ![三路快速排序算法](https://github.com/Panghu98/algorithm-data-structure/blob/master/picture/p5.png)
 
 
+
  ### 队列
  #### 在静态处理和动态处理（表现很好）的都较好
  * 普通队列：先进先出
  * 优先队列：出队顺序和入队顺序无关；与优先级相关
-    * 入队
-    * 出队 （去除优先级最高的元素 ）
+     * 入队
+     * 出队 （去除优先级最高的元素 ）
     ![队列的效率](https://github.com/Panghu98/algorithm-data-structure/blob/master/picture/关于队列的排序算法.png)
 
     * 二叉堆(必须是一棵完全二叉树):
