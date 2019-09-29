@@ -57,17 +57,19 @@ public class SegmentTree<E> {
         return 2*index + 2;
     }
 
-    // 返回区间[queryL, queryR]的值
-    public E query(int queryL, int queryR){
+    // 返回区间[queryLeft, queryRight]的值
+    //返回的值是一个操作merge锁返回的值
+    public E query(int queryLeft, int queryRight){
 
-        if(queryL < 0 || queryL >= data.length ||
-                queryR < 0 || queryR >= data.length || queryL > queryR)
+        if(queryLeft < 0 || queryLeft >= data.length ||
+                queryRight < 0 || queryRight >= data.length || queryLeft > queryRight) {
             throw new IllegalArgumentException("Index is illegal.");
+        }
 
-        return query(0, 0, data.length - 1, queryL, queryR);
+        return query(0, 0, data.length - 1, queryLeft, queryRight);
     }
 
-    // 在以treeIndex为根的线段树中[l...r]的范围里，搜索区间[queryL...queryR]的值
+    // 在以treeIndex为根的线段树中[l...r]的范围里，搜索区间[queryLeft...queryRight]的值
     private E query(int treeIndex, int l, int r, int queryLeft, int queryRight){
         //
         if (l == queryLeft && r == queryLeft){
@@ -78,15 +80,49 @@ public class SegmentTree<E> {
         // treeIndex的节点分为[l...mid]和[mid+1...r]两部分
         int leftTreeIndex = leftChild(treeIndex);
         int rightTreeIndex = rightChild(treeIndex);
+        //全在左边和圈子啊右边的情况
         if(queryLeft >= mid + 1) {
             return query(rightTreeIndex, mid + 1, r, queryLeft, queryRight);
         } else if(queryRight <= mid) {
             return query(leftTreeIndex, l, mid, queryLeft, queryRight);
         }
+        //继续划分
         E leftResult = query(leftTreeIndex, l, mid, queryLeft, mid);
         E rightResult = query(rightTreeIndex, mid + 1, r, mid + 1, queryRight);
         return merger.merge(leftResult, rightResult);
     }
+    // 将index位置的值，更新为e
+    public void set(int index, E e){
+
+        if(index < 0 || index >= data.length)
+            throw new IllegalArgumentException("Index is illegal");
+
+        data[index] = e;
+        set(0, 0, data.length - 1, index, e);
+    }
+
+    // 在以treeIndex为根的线段树中更新index的值为e
+    private void set(int treeIndex, int l, int r, int index, E e){
+
+        if(l == r){
+            tree[treeIndex] = e;
+            return;
+        }
+
+        int mid = l + (r - l) / 2;
+        // treeIndex的节点分为[l...mid]和[mid+1...r]两部分
+
+        int leftTreeIndex = leftChild(treeIndex);
+        int rightTreeIndex = rightChild(treeIndex);
+        if(index >= mid + 1)
+            set(rightTreeIndex, mid + 1, r, index, e);
+        else // index <= mid
+            set(leftTreeIndex, l, mid, index, e);
+
+        tree[treeIndex] = merger.merge(tree[leftTreeIndex], tree[rightTreeIndex]);
+    }
+
+
 
     @Override
     public String toString(){
