@@ -39,7 +39,9 @@ public class QuickSort {
                 * 相关的操作
                 * 1.比初始位置大或者是等于的数都放在初始位置的右边一个,放一个position的位置增加一
                 * */
-                swap(arr,i,++position);
+                position++;
+                //比value大的和比value小的进行交换
+                swap(arr,i,position);
             }
         }
 
@@ -50,14 +52,6 @@ public class QuickSort {
 
     }
 
-    @Test
-    public void test(){
-        int[] a = { 49, 38, 65, 97, 76, 13, 27, 50 };
-        quickSort(a,  0,a.length-1);
-        System.err.println("排好序的数组：");
-        for (int e : a) {
-            System.out.print(e+" ");
-        }
-    }
+
 
 }
