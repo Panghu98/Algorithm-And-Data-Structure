@@ -36,7 +36,7 @@ public class TrieMain {
             Trie trie = new Trie();
             for(String word: words)
                 trie.add(word);
-
+            trie.remove("hello");
             for(String word: words)
                 trie.contains(word);
 
