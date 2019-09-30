@@ -91,7 +91,12 @@ public class SegmentTree<E> {
         E rightResult = query(rightTreeIndex, mid + 1, r, mid + 1, queryRight);
         return merger.merge(leftResult, rightResult);
     }
-    // 将index位置的值，更新为e
+
+    /**
+     * 将index位置的值，更新为e
+     * @param index data数组小标
+     * @param e 更新后的元素值
+     */
     public void set(int index, E e){
 
         if(index < 0 || index >= data.length)
@@ -114,10 +119,14 @@ public class SegmentTree<E> {
 
         int leftTreeIndex = leftChild(treeIndex);
         int rightTreeIndex = rightChild(treeIndex);
-        if(index >= mid + 1)
+
+        //如果在右边
+        if(index >= mid + 1) {
             set(rightTreeIndex, mid + 1, r, index, e);
-        else // index <= mid
+        } else // index <= mid
+        {
             set(leftTreeIndex, l, mid, index, e);
+        }
 
         tree[treeIndex] = merger.merge(tree[leftTreeIndex], tree[rightTreeIndex]);
     }
