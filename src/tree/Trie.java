@@ -198,6 +198,7 @@ public class Trie {
         if(stack.peek().next.size() > 0) {
             return true;
         } else {
+            //移除最后一个
             stack.pop();
         }
 
