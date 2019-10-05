@@ -1,8 +1,12 @@
 package find;
 
+import find.UF;
+import find.UnionFind3;
+import find.UnionFind4;
+
 import java.util.Random;
 
-public class Main {
+public class Main2 {
 
     private static double testUF(UF uf, int m){
 
@@ -31,23 +35,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // UnionFind1 慢于 UnionFind2
-//        int size = 100000;
-//        int m = 10000;
-        //1.和语言相关,JVM对于数组的优化做的很好,而UnionFind2中的节点在内存当中并不是连续的,2.UnionFind2的isConnected算法复杂度更高
+        int size = 10000000;
+        int m = 10000000;
 
-
-        // UnionFind2 慢于 UnionFind1, 但UnionFind3最快
-        int size = 100000;
-        int m = 100000;
-
-        UnionFind1 uf1 = new UnionFind1(size);
-        System.out.println("UnionFind1 : " + testUF(uf1, m) + " s");
-
-        UnionFind2 uf2 = new UnionFind2(size);
-        System.out.println("UnionFind2 : " + testUF(uf2, m) + " s");
+//        UnionFind1 uf1 = new UnionFind1(size);
+//        System.out.println("UnionFind1 : " + testUF(uf1, m) + " s");
+//
+//        UnionFind2 uf2 = new UnionFind2(size);
+//        System.out.println("UnionFind2 : " + testUF(uf2, m) + " s");
 
         UnionFind3 uf3 = new UnionFind3(size);
         System.out.println("UnionFind3 : " + testUF(uf3, m) + " s");
+
+        UnionFind4 uf4 = new UnionFind4(size);
+        System.out.println("UnionFind4 : " + testUF(uf4, m) + " s");
     }
 }
