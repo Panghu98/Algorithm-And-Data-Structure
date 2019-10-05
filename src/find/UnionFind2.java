@@ -1,5 +1,8 @@
 package find;
 
+/**
+ * @author panghu
+ */
 public class UnionFind2 implements UF {
 
     //第二版Union-Find, 使用一个数组构建一棵指向父节点的树

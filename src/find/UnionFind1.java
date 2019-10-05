@@ -1,7 +1,11 @@
 package find;
 
+/**
+ * @author panghu
+ */
 public class UnionFind1 implements UF {
 
+    //类似于UnionFind2中的parent数组
     private int[] id;
 
     public UnionFind1(int size) {
@@ -50,7 +54,7 @@ public class UnionFind1 implements UF {
             return;
         }
 
-        // 合并过程需要遍历一遍所有元素, 将两个元素的所属集合编号合并
+        // 合并过程需要遍历一遍所有元素, 将两个元素的所属集合编号合并  需要找到元素p和元素q
         //注意是合并集合，是将集合的值进行改变
         for (int i = 0; i < id.length; i++) {
             if (id[i] == pID) {
