@@ -136,14 +136,15 @@ public class RBTree<T extends Comparable<T>> {
     }
     //使用递归
     private RBNode<T> search2(RBNode<T> x, T key) {
-        if(x == null)
+        if(x == null) {
             return x;
+        }
         int cmp = key.compareTo(x.key);
-        if(cmp < 0)
+        if(cmp < 0) {
             return search2(x.left, key);
-        else if(cmp > 0)
+        } else if(cmp > 0) {
             return search2(x.right, key);
-        else
+        } else
             return x;
     }
 
