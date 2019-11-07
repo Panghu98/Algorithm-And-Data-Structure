@@ -6,7 +6,7 @@ import static sort.PublicMethod.swap;
 
 /**
  * @author panghu
- * @title: QuickSort2
+ * @title: QuickSort2  两路快排
  * @projectName Algorithm_And_Data_Structure
  * @date 19-7-22 下午10:27
  */
