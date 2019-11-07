@@ -1,4 +1,4 @@
-package practiceofswordtooffer.quesiotn17;
+package practiceofswordtooffer.question17;
 
 /**
  * @author dengg
