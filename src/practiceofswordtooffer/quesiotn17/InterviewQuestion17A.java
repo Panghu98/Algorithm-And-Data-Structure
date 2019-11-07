@@ -1,4 +1,4 @@
-package practiceofswordtooffer;
+package practiceofswordtooffer.quesiotn17;
 
 /**
  * 如不考虑溢出的问题
