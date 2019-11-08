@@ -1,9 +1,10 @@
 package practiceofswordtooffer.question3;
 
 /**
+ * 在不修改数组的情况下  使用 O(n)的辅助数组
  * @author dengg
  */
-public class FindRepeatedNumber {
+public class FindRepeatedNumber2 {
 
     private int duplicateNumber;
 
@@ -17,7 +18,7 @@ public class FindRepeatedNumber {
         arr[indexY] = temp;
     }
 
-     boolean duplicate(int[] numbers){
+    boolean duplicate(int[] numbers){
 
         //排除错误条件
         if (numbers.length == 0){
@@ -30,18 +31,21 @@ public class FindRepeatedNumber {
             }
         }
 
+        //用于标记数组中某元素是否存在
+        int[] flagArr = new int[numbers.length];
+
         for (int i = 0; i < numbers.length; i++) {
 
-            //当当前元素的值不在 对应的索引位置的时候 --该循环的意义在于将获取当前位置的正确值
-            while (numbers[i] != i) {
-                //当元素对应的索引上的值已存在的时候
-                if (numbers[i] == numbers[numbers[i]]) {
-                    duplicateNumber = numbers[i];
-                    return true;
-                }
-                //交换位置
-                swap(numbers, i, numbers[i]);
+            //当前元素的值
+            int value = numbers[i];
+
+            if (flagArr[value] == 1) {
+                duplicateNumber = value;
+                return true;
+            }else {
+                flagArr[value] = 1;
             }
+
         }
         return false;
 
@@ -50,11 +54,12 @@ public class FindRepeatedNumber {
     public static void main(String[] args) {
 
         int[] numbers = {1,2,4,5,2,6,0};
-        FindRepeatedNumber findRepeatedNumber = new FindRepeatedNumber();
+        FindRepeatedNumber2 findRepeatedNumber = new FindRepeatedNumber2();
         boolean result = findRepeatedNumber.duplicate(numbers);
         System.err.println(result);
         System.err.println(findRepeatedNumber.getDuplicateNumber());
 
     }
+
 
 }
