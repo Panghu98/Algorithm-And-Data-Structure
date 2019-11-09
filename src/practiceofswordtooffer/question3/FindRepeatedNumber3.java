@@ -22,9 +22,9 @@ public class FindRepeatedNumber3 {
 
         int start = 0;
         int end = numbers.length-1;
-        //使用位移运算符运算速度会更快
-        int middle = ((end - start)/2+start) >> 2;
         while (end >= start){
+            //使用位移运算符运算速度会更快
+            int middle = (end - start)>>1+start;
             int count = countRange(numbers,numbers.length,start,middle);
             if (end == start){
                 if (count > 1){
@@ -34,7 +34,7 @@ public class FindRepeatedNumber3 {
                     break;
                 }
             }
-            if (count > middle-start+1){
+            if (count > (middle-start+1)){
                 // 继续循环 ，范围在前半部分
                 end = middle;
             }else {
@@ -54,6 +54,16 @@ public class FindRepeatedNumber3 {
             }
         }
         return count;
+    }
+
+    public static void main(String[] args) {
+
+        int[] numbers = {0,1,1,3,4,5,6,7,7,9};
+        FindRepeatedNumber3 findRepeatedNumber = new FindRepeatedNumber3();
+        int result = findRepeatedNumber.duplicate(numbers);
+        System.err.println(result);
+        System.err.println(findRepeatedNumber.getDuplicateNumber());
+
     }
 
 }
