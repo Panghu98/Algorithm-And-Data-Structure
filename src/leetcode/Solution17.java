@@ -38,12 +38,13 @@ public class Solution17 {
         for (int j = 0; j < dict[digits[n]].length(); j++) {
             oneRes = oneRes + dict[digits[n]].charAt(j);
             combi(digits, n + 1, dict, res, oneRes);
+            // 必要的，在这个循环中如果不截取的话，-1是为了返回上一个字符减一的阶段
             oneRes = oneRes.substring(0, oneRes.length() - 1);
         }
     }
 
     public static void main(String[] args) {
-         better("546");
+         better("456");
     }
 
 }
