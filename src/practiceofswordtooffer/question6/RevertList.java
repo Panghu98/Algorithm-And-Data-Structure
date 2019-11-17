@@ -45,22 +45,35 @@ public class RevertList {
         }
     }
 
-    public static Node generateList(int n){
+    public static Node generateListByTailInsert(int n){
         Node head = new Node(-1);
         Node temp,tail;
         tail = head;
-        for (int i = n-1; i >= 0; i--) {
+        for (int i = 0; i < n; i++) {
             temp = new Node(i);
             //使用尾插法 ，将头结点指向下一个节点
-            temp.next = tail.next;
             tail.next = temp;
             tail = temp;
         }
+        tail.next = null;
+        //返回的结果应该为 -1,0,....n
+        return head;
+    }
+
+    public static Node generateListByHeadInsert(int n) {
+        Node head = new Node(-1);
+        Node temp = head.next;
+        for (int i = 0; i < n; i++) {
+            Node node = new Node(i);
+            node.next = head.next;
+            head.next = node;
+        }
+        //返回的结果应该为 -1,n,n-1... 0
         return head;
     }
 
     public static void main(String[] args) {
-        Node head = generateList(10);
+        Node head = generateListByHeadInsert(10);
         revertPrint2(head);
     }
 }
