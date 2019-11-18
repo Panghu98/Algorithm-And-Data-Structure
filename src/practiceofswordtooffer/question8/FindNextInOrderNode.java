@@ -2,7 +2,7 @@ package practiceofswordtooffer.question8;
 
 public class FindNextInOrderNode {
 
-    class Node{
+    static class Node{
        private int value;
        private Node left;
        private Node right;
@@ -37,5 +37,4 @@ public class FindNextInOrderNode {
             return pNode.parent;
         }
     }
-
 }
