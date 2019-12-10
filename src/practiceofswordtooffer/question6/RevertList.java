@@ -62,9 +62,9 @@ public class RevertList {
 
     public static Node generateListByHeadInsert(int n) {
         Node head = new Node(-1);
-        Node temp = head.next;
         for (int i = 0; i < n; i++) {
             Node node = new Node(i);
+            //移动头指针
             node.next = head.next;
             head.next = node;
         }

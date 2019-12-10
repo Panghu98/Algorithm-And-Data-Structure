@@ -104,6 +104,34 @@
   ### 链表的时间复杂度分析
   ![](https://github.com/Panghu98/algorithm-data-structure/blob/master/picture/链表的时间复杂度分析.png)
   
+  ```
+  public static Node generateListByTailInsert(int n){
+        Node head = new Node(-1);
+        Node temp,tail;
+        tail = head;
+        for (int i = 0; i < n; i++) {
+            temp = new Node(i);
+            //使用尾插法 ，将头结点指向下一个节点
+            tail.next = temp;
+            tail = temp;
+        }
+        tail.next = null;
+        //返回的结果应该为 -1,0,....n
+        return head;
+    }
+
+    public static Node generateListByHeadInsert(int n) {
+        Node head = new Node(-1);
+        Node temp = head.next;
+        for (int i = 0; i < n; i++) {
+            Node node = new Node(i);
+            node.next = head.next;
+            head.next = node;
+        }
+        //返回的结果应该为 -1,n,n-1... 0
+        return head;
+    }
+  ```
   
   
   
