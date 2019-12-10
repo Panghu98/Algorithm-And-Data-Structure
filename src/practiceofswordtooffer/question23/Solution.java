@@ -1,6 +1,5 @@
 package practiceofswordtooffer.question23;
 
-import leetcode.Solution70;
 
 public class Solution {
 
@@ -14,20 +13,21 @@ public class Solution {
         }
     }
 
-    public ListNode entryNodeOfLoop(ListNode pHead){
+    public ListNode entryNodeOfLoop(ListNode pNode){
 
-        if (pHead == null) {
+        if (pNode == null) {
             throw new NullPointerException("The headOf List can`t be null");
         }
 
-        ListNode fastPointer = pHead.next;
-        ListNode slowPointer = pHead;
+        ListNode fastPointer = pNode.next;
+        ListNode slowPointer = pNode;
 
         //走到结尾
         while (fastPointer.next != null) {
 
             if (fastPointer == slowPointer) {
                 return fastPointer;
+            //移动指针,判断,再移动指针
             }else {
                 fastPointer = fastPointer.next;
                 if (fastPointer != slowPointer) {

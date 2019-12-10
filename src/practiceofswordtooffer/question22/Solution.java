@@ -26,10 +26,10 @@ public class Solution {
             return null;
         }
 
-        ListNode pHead = head,pTail = null;
+        ListNode pNode = head,pTail = null;
         int counter = 0;
-        while (pHead.next != null) {
-            pHead = pHead.next;
+        while (pNode.next != null) {
+            pNode = pNode.next;
             counter ++ ;
 
             if (counter == k -1) {
