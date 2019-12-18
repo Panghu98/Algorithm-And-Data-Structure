@@ -1,7 +1,8 @@
 package practiceofswordtooffer.question23;
 
 
-public class Solution {
+public class
+Solution {
 
     static class ListNode {
 
