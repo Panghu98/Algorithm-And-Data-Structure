@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * @author dengg
  *
- * t通过辅助栈实现，主要根据弹出栈进行判断
+ * 通过辅助栈实现，主要根据弹出栈进行判断
  */
 public class Solution {
     public boolean isPopOrder(int [] pushA,int [] popA) {
@@ -14,7 +14,7 @@ public class Solution {
         if(pushA.length == 0 || popA.length == 0) {
             return false;
         }
-        Stack<Integer> s = new Stack<Integer>();
+        Stack<Integer> s = new Stack<>();
         //用于标识弹出序列的位置
         int popIndex = 0;
         for (int value : pushA) {
