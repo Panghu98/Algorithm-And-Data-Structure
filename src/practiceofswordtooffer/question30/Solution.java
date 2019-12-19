@@ -13,11 +13,11 @@ public class Solution {
 
     public void push(int node) {
         stack.push(node);
-        int num = stack.peek();
-        if (stack.isEmpty()) {
+        if (minStack.isEmpty()) {
             minStack.push(node);
         }else {
             //存入较小的那个
+            int num = minStack.peek();
             minStack.push(Math.min(num,node));
         }
     }
