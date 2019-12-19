@@ -42,6 +42,7 @@ public class Solution {
             deque.pollFirst();
             res.add(node.val);
 
+            //分别将左子节点和右子节点放入队尾
             if(node.left != null) {
                 deque.addLast(node.left);
             }
