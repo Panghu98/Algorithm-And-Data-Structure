@@ -17,7 +17,7 @@ public class Solution {
             return false;
         }
 
-        //截止位置
+        //截止位置,此时判定为二叉树
         if (end - start == 1) {
             return true;
         }
