@@ -9,26 +9,26 @@ public class RebuildBinaryTree {
     public RebuildBinaryTree() {
     }
 
-    class BinaryTreeNode{
+    class TreeNode{
         int value;
-        BinaryTreeNode left;
-        BinaryTreeNode right;
+        TreeNode left;
+        TreeNode right;
 
-        public BinaryTreeNode(int value) {
+        public TreeNode(int value) {
             this.value = value;
         }
 
-        public BinaryTreeNode() {
+        public TreeNode() {
         }
     }
 
-    public BinaryTreeNode rebuildBinaryTree(int[] pre,int[] in) {
+    public TreeNode rebuildBinaryTree(int[] pre,int[] in) {
 
         if (pre.length == 0 || in.length == 0) {
             return null;
         }
         //确定根节点
-        BinaryTreeNode root = new BinaryTreeNode(pre[0]);
+        TreeNode root = new TreeNode(pre[0]);
         for (int i = 0; i < in.length; i++) {
             if (in[i] == pre[0]) {
                 //左子树，使用copyOfRange函数，左闭合右开
@@ -48,7 +48,7 @@ public class RebuildBinaryTree {
         return root;
     }
 
-    private static void printBinaryTreePreOrder(BinaryTreeNode node) {
+    private static void printBinaryTreePreOrder(TreeNode node) {
         if (node == null){
             return;
         }
@@ -60,7 +60,7 @@ public class RebuildBinaryTree {
     public static void main(String[] args) {
         int[] pre = {1,2,4,7,3,5,6,8};
         int[] in = {4,7,2,1,5,3,8,6};
-        BinaryTreeNode root = new RebuildBinaryTree().rebuildBinaryTree(pre,in);
+        TreeNode root = new RebuildBinaryTree().rebuildBinaryTree(pre,in);
         printBinaryTreePreOrder(root);
     }
 
