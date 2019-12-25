@@ -25,7 +25,7 @@ public class QuickSort {
 
     /*
     * 对arr[l...r]部分进行partition操作
-    * 返回position,是的arr[l...p-1]<arr[p],arr[p+1...r]>arr[p]
+    * 返回position,arr[l...p-1]<arr[p],arr[p+1...r]>arr[p]
     * */
     public static int partition(int[] arr,int left,int right){
 

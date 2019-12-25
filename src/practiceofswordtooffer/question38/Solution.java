@@ -15,6 +15,7 @@ public class Solution {
         if (str == null || str.length() == 0) {
             return new ArrayList<>();
         }
+        //可以利用set进行去重操作
         Set<String> set = new TreeSet<>();
         helper(str.toCharArray(),0,set);
         return new ArrayList<>(set);
