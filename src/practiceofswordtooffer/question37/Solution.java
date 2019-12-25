@@ -60,8 +60,7 @@ public class Solution {
                 treeNode.right = deserialize(arr,index*2+2);
             }
         }
-        return treeNode;
-    }
+        return treeNode; }
 
     public static void main(String[] args) {
         test01();
