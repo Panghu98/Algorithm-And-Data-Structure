@@ -6,8 +6,15 @@ public class Solution {
 
     public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
 
-        if (input == null || k > input.length || k <= 0) {
-            throw new IllegalArgumentException("参数错误");
+        if (input == null || input.length == 0 || k <= 0) {
+            return new ArrayList<>();
+        }
+
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+
+        if (k >input.length) {
+            return new ArrayList<>();
         }
         int start = 0;
         int end = input.length -1;
@@ -22,9 +29,8 @@ public class Solution {
                 partition = partition(input,start,end);
             }
         }
-        ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < k; i++) {
-            arrayList.add(input[i]);
+             arrayList.add(input[i]);
         }
         return arrayList;
 
@@ -55,7 +61,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] arr = new int[]{4,5,1,6,2,7,3,8};
-        int k = 4;
+        int k = 10;
         ArrayList<Integer> arrayList = solution.GetLeastNumbers_Solution(arr,k);
         System.err.println(arrayList);
     }
