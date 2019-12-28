@@ -1,6 +1,5 @@
 package practiceofswordtooffer.question41;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Solution {
