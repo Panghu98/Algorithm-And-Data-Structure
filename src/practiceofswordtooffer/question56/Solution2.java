@@ -12,7 +12,9 @@ public class Solution2 {
         int[] bitSum = {0};
         for (int i = 0; i < number.length; i++) {
             int bitMask = 1;
+            //从高位到低位计算
             for (int j = 31; j >= 0 ; j--) {
+                //利用辅助数组进行数位存储
                 int bit = number[i] & bitMask;
                 if (bit != 0) {
                     bitSum[j] += 1;
