@@ -49,8 +49,14 @@ public class Solution1 {
         }
 
 
+        int counter = 0;
+
         while (!deque.isEmpty()) {
-            list.add(deque.remove());
+            Integer removeNum = deque.remove();
+            if (counter >= 2) {
+                list.add(removeNum);
+            }
+            counter++;
         }
 
         deque = null;
