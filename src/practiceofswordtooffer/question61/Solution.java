@@ -24,6 +24,7 @@ public class Solution {
         //统计数组中相邻数字之间的空缺总数
         int countGap=0;
 
+
         //分别表示两个相邻的元素（从不为0的位置开始）
         int low=count0;
         int high=low+1;
