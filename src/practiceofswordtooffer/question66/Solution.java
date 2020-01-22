@@ -1,5 +1,9 @@
 package practiceofswordtooffer.question66;
 
+import org.junit.Test;
+
+import java.util.Arrays;
+
 public class Solution {
 
     public int[] multiply(int[] A) {
@@ -19,6 +23,12 @@ public class Solution {
             B[i]*=temp;
         }
         return B;
+    }
+
+    @Test
+    public void test() {
+        int[] arr = {1,2,3,4,5,6};
+        System.err.println(Arrays.toString(multiply(arr)));
     }
 
 
