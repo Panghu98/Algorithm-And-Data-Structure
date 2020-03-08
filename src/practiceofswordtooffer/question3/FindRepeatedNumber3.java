@@ -5,13 +5,6 @@ package practiceofswordtooffer.question3;
  */
 public class FindRepeatedNumber3 {
 
-    private int duplicateNumber;
-
-
-    public int getDuplicateNumber() {
-        return duplicateNumber;
-    }
-
     public void swap(int[] arr, int indexX, int indexY){
         int temp = arr[indexX];
         arr[indexX] = arr[indexY];
@@ -24,17 +17,17 @@ public class FindRepeatedNumber3 {
         int end = numbers.length-1;
         while (end >= start){
             //使用位移运算符运算速度会更快
-            int middle = (end - start)>>1+start;
-            int count = countRange(numbers,numbers.length,start,middle);
+            int middle = ((end - start)>>1)+start;
+            int count = numbers[middle];
             if (end == start){
-                if (count > 1){
+                if (count > 0){
                     //返回start和end都是一样的效果
-                    return start;
+                    return numbers[start];
                 }else {
                     break;
                 }
             }
-            if (count > (middle-start+1)){
+            if (count < middle){
                 // 继续循环 ，范围在前半部分
                 end = middle;
             }else {
@@ -58,11 +51,10 @@ public class FindRepeatedNumber3 {
 
     public static void main(String[] args) {
 
-        int[] numbers = {0,1,1,3,4,5,6,7,7,9};
+        int[] numbers = {0,1,1,3,4,5,6,7,7,8};
         FindRepeatedNumber3 findRepeatedNumber = new FindRepeatedNumber3();
         int result = findRepeatedNumber.duplicate(numbers);
         System.err.println(result);
-        System.err.println(findRepeatedNumber.getDuplicateNumber());
 
     }
 

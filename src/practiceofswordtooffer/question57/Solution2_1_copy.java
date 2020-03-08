@@ -2,36 +2,32 @@ package practiceofswordtooffer.question57;
 
 import org.junit.Test;
 
-public class Solution2_1 {
-    public static void FindContinuousSequence(int sum) {
-
-        if (sum < 3) {
-            return;
-        }
-
+/**
+ * @author: panghu
+ * @Description:
+ * @Date: Created in 19:46 2020/3/7
+ * @Modified By:
+ */
+public class Solution2_1_copy {
+    public void FindContinuousSequence(int num) {
         int small = 1;
         int big = 2;
-        int middle = (1 + sum) /2;
-        //当前总和
-        int curSum = small + big;
-
+        int curSum = 3;
+        int middle = num/2 +1;
         while (small < middle) {
-            if (curSum == sum ) {
+            if (curSum == num) {
                 PrintContinuousSequence(small,big);
             }
 
-            //先使用big增加到大于sum
-            while (curSum > sum && small < middle) {
-                curSum -= small;
-                small ++;
-
-                if (curSum == sum) {
+            while (curSum < num && big > small) {
+                big++;
+                curSum += big;
+                if (curSum == num) {
                     PrintContinuousSequence(small,big);
                 }
             }
-
-            big ++;
-            curSum += big;
+            curSum -= small;
+            small++;
         }
     }
 

@@ -8,6 +8,8 @@ import org.junit.Test;
  */
 public class HasPath {
 
+
+
     boolean hasPath(char[] matrix, int columns, int rows, char[] ways) {
 
         if (matrix == null || rows < 1 || columns < 1 || ways == null) {

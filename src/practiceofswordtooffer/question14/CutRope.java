@@ -2,6 +2,47 @@ package practiceofswordtooffer.question14;
 
 public class CutRope {
 
+    public static int maxProductAfterByDynamicPlaning2(int length) {
+        if (length < 2) {
+            throw new IllegalArgumentException();
+        }
+        if (length == 2) {
+            return 1;
+        }
+
+        int[] ropes = new int[length+1];
+
+        ropes[0] = 0;
+        ropes[1] = 1;
+        ropes[2] = 2;
+        ropes[3] = 3;
+
+        for (int i = 4; i <= length; i++) {
+            int max = 0;
+            for (int j = 1; j <= (i/2); j++) {
+                int product = (ropes[j] * ropes[i - j]);
+                if (product > max) {
+                    max = product;
+                }
+            }
+            ropes[i] = max;
+        }
+
+        return ropes[length];
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static int maxProductAfterByDynamicPlaning(int length) {
 
         if (length < 2 ) {
@@ -25,6 +66,8 @@ public class CutRope {
         int max = 0;
         for (int i = 4; i <= length; i++) {
             max = 0;
+
+            //寻找子问题当中的最优解
             for (int j = 1; j <= i / 2; j++) {
                 int product = products[j] * products[i -j];
                 if (max < product) {
@@ -67,7 +110,7 @@ public class CutRope {
 
 
     public static void main(String[] args) {
-        int result = maxProductAfterGreedily(5);
+        int result = maxProductAfterGreedily(12);
         System.err.println(result);
     }
 

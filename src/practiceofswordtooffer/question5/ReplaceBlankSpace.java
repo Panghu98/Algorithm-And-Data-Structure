@@ -34,6 +34,33 @@ public class ReplaceBlankSpace {
         return stringBuffer.toString();
     }
 
+    public static String replaceBlankSpace2(StringBuffer stringBuffer) {
+        int length = stringBuffer.length();
+        int newLength = length;
+        for (int i = 0; i < length; i++) {
+            if (stringBuffer.charAt(i) == ' ') {
+                newLength += 2;
+            }
+        }
+
+        stringBuffer.setLength(newLength);
+
+        //从末尾开始设置字符
+        int index = newLength-1;
+
+        for (int i = length-1; i >= 0; i--) {
+            if (stringBuffer.charAt(i) == ' ') {
+                stringBuffer.setCharAt(index--,'0');
+                stringBuffer.setCharAt(index--,'2');
+                stringBuffer.setCharAt(index--,'%');
+            }else {
+                stringBuffer.setCharAt(index--,stringBuffer.charAt(i));
+            }
+        }
+
+        return stringBuffer.toString();
+    }
+
     /**
      * 输入字符串为首尾空格，中间连续空格
      */
@@ -41,7 +68,7 @@ public class ReplaceBlankSpace {
     public void test4() {
         System.out.print("Test4：");
         StringBuffer sBuffer = new StringBuffer(" a b  c  ");
-        String s = replaceBlankSpace(sBuffer);
+        String s = replaceBlankSpace2(sBuffer);
         System.out.println(s);
     }
 

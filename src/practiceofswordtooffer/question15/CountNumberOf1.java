@@ -49,8 +49,17 @@ public class CountNumberOf1 {
         return count;
     }
 
+    public static int getNumberOf1Method4(int num) {
+        int count = 0;
+        while (num != 0) {
+            count++;
+            num = num & (num -1 );
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
-        int result = getNumberOf1Method3(0x7fffffff);
+        int result = getNumberOf1Method4(0x7fffffff);
         System.err.println(result);
     }
 }

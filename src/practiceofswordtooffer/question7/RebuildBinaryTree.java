@@ -1,7 +1,8 @@
 package practiceofswordtooffer.question7;
 
+import array.Array;
+
 import javax.xml.soap.Node;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class RebuildBinaryTree {
@@ -20,6 +21,28 @@ public class RebuildBinaryTree {
 
         public TreeNode() {
         }
+    }
+
+    public TreeNode rebuildBinaryTree2(int[] pre,int[] in) {
+        if (pre.length == 0 || in.length == 0) {
+            return null;
+        }
+
+        //确定根节点
+        TreeNode root = new TreeNode(pre[0]);
+        for (int i = 0; i < in.length; i++) {
+            if (in[i] == root.value) {
+               root.left = rebuildBinaryTree2(Arrays.copyOfRange(pre,1,i+1),
+                       Arrays.copyOfRange(in,0,i));
+               root.right = rebuildBinaryTree2(Arrays.copyOfRange(pre,i+1,pre.length),
+                       Arrays.copyOfRange(in,i+1,in.length));
+               break;
+            }
+        }
+
+        return root;
+
+
     }
 
     public TreeNode rebuildBinaryTree(int[] pre,int[] in) {
@@ -60,7 +83,7 @@ public class RebuildBinaryTree {
     public static void main(String[] args) {
         int[] pre = {1,2,4,7,3,5,6,8};
         int[] in = {4,7,2,1,5,3,8,6};
-        TreeNode root = new RebuildBinaryTree().rebuildBinaryTree(pre,in);
+        TreeNode root = new RebuildBinaryTree().rebuildBinaryTree2(pre,in);
         printBinaryTreePreOrder(root);
     }
 

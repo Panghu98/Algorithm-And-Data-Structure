@@ -2,7 +2,6 @@ package sort;
 
 import java.util.Random;
 
-import static sort.InsertSort.insertSort;
 
 /**
  * @author panghu
@@ -46,12 +45,6 @@ public class PublicMethod {
         System.out.println("\n排序后：");
 
         long start = System.nanoTime();
-
-        int[] result =  insertSort(arr);
-        for (int a:result
-        ) {
-            System.out.print(a + " ");
-        }
 
         long end = System.nanoTime();
 

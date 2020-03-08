@@ -45,7 +45,7 @@ public class Solution2 {
         double result = powerWithUnsignedExponent(base,exponent>>1);
         result *= result;
         //判断奇偶性，利用位移的效率比%高，如果是奇数需要多乘上一个base，因为奇数位移的时候，exponent少了一
-        if ((exponent & 0x1) == 1) {
+        if ((exponent & 1) == 1) {
             result *= base;
         }
         return result;

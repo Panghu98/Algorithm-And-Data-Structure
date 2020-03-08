@@ -20,6 +20,7 @@ public class MergeSort {
           //相当于子序列中只有一个元素时结束递归
           if (start<end){
               int mid = (start+end)/2;
+              //这两个递归用于将数组划分成为最小的粒度
               mergeSort(arr,start,mid);
               mergeSort(arr,mid+1,end);
               merge(arr,start,mid,end);
@@ -57,6 +58,8 @@ public class MergeSort {
 
           //这里只是完成了部分的排序，所以位置应该是这段范围内的left到right
           //注意这里是小于等于
+
+          // 将临时数组的值赋值到arr
           if (right + 1 - left >= 0) {
               System.arraycopy(temp, left, arr, left, right + 1 - left);
           }

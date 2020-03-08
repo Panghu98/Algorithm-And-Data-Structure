@@ -2,6 +2,10 @@ package practiceofswordtooffer.question13;
 
 public class MovingCount {
 
+    public static void main(String[] args) {
+        System.err.println(MovingCount.movingCount(12,5,4));
+    }
+
     public static int movingCount(int threshold, int columns, int rows) {
         boolean[] visited = new boolean[columns * rows];
         int column = 0, row = 0;
@@ -16,7 +20,7 @@ public class MovingCount {
      * @param threshold 阀值
      * @param columns   列长
      * @param rows      行宽
-     * @param visited   用于记录微爱之是否被访问过
+     * @param visited   用于记录之是否被访问过
      * @param row       当前行
      * @param column    当前列
      * @return 数量
@@ -26,9 +30,10 @@ public class MovingCount {
 
 
         int count = 0;
-        if (check(threshold, columns, rows, visited, column, row)) {
+        if (check(threshold, columns, rows, visited, row, column)) {
             visited[row * columns + column] = true;
 
+            //1代表当前count  加上的是子路的所有可能
             count = 1 + movingCount(threshold, columns, rows, visited, column + 1, row) +
                     movingCount(threshold, columns, rows, visited, column - 1, row) +
                     movingCount(threshold, columns, rows, visited, column, row + 1) +
@@ -39,19 +44,20 @@ public class MovingCount {
     }
 
     /**
-     * 判断机器人时候进入坐标（row,column）
+     * 判断机器人是否进入坐标（row,column）
      *
      * @param threshold 阀值
      * @param columns   列长
      * @param rows      行宽
-     * @param visited   用于记录微爱之是否被访问过
+     * @param visited   用于记录之是否被访问过
      * @param row       当前行
      * @param column    当前列
      * @return 时候能进入的结果
      */
     private static boolean check(int threshold, int columns, int rows, boolean[] visited, int row, int column) {
-        return row >= 0 && column >= 0 && !visited[column * row + column] && getSumOfDigital(column, row) <= threshold &&
-                column <= columns && row <= rows;
+        return (row >= 0 && column >= 0&& column < columns && row < rows
+                && !visited[columns * row + column] && getSumOfDigital(column, row) <= threshold)
+                ;
     }
 
 

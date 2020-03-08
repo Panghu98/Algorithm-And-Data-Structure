@@ -52,6 +52,16 @@ public class QuickSort {
 
     }
 
+    @Test
+    public void test(){
+        int[] a = { 49, 38, 65, 97, 76, 13, 27, 50 };
+        quickSort(a,  0,a.length-1);
+        System.err.println("排好序的数组：");
+        for (int e : a) {
+            System.out.print(e+" ");
+        }
+    }
+
 
 
 }

@@ -15,6 +15,7 @@ public class Solution {
     private void MergeOne(int[] array, int start, int mid, int end){
         int[] temp = new int[end-start+1];
         int k=0,i=start,j=mid+1;
+        // i和j分别是两个子数组的开始位置
         while(i<=mid && j<= end){
         //如果前面的元素小于后面的不能构成逆序对
             if(array[i] <= array[j])
@@ -40,7 +41,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] arr = new int[]{7,5,6,4};
+        int[] arr = new int[]{8,7,5,6,4};
         int result = solution.InversePairs(arr);
         System.err.println(result);
     }
