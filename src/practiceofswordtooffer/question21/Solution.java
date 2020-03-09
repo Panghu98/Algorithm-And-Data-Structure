@@ -8,6 +8,7 @@ public class Solution {
 
     private static void swap(int[] arr,int indexX,int indexY) {
         int temp = arr[indexX];
+
         arr[indexX] = arr[indexY];
         arr[indexY ] = temp;
     }

@@ -2,7 +2,7 @@ package practiceofswordtooffer.question24;
 
 
 
-public class Solution {
+public class  Solution {
 
     static class ListNode {
 
