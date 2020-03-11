@@ -58,6 +58,7 @@ public class Solution {
 
         //3、拆分链表，将链表拆分为原链表和复制后的链表
         currentNode = pHead;
+        //需要保存复制节点的头结点信息
         RandomListNode pCloneHead = pHead.next;
         while (currentNode != null) {
             //当前节点的复制节点

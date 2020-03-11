@@ -7,12 +7,14 @@ public class Solution {
 
     /**
      *
+     *  判断一个数组是不是二叉搜索树的结果
+     *
      * @param sequence  数组
      * @param start 数组的开始
      * @param end 数组的结束点
      * @return
      */
-    public boolean verifySquenceOfBST(int[] sequence,int start,int end) {
+    public boolean verifySequenceOfBST(int[] sequence,int start,int end) {
         if (sequence == null || end -start <= 0 ) {
             return false;
         }
@@ -46,13 +48,13 @@ public class Solution {
         //判断左子树是不是二叉搜索树
         boolean left = true;
         if (i > 0) {
-            left = verifySquenceOfBST(sequence,start,i);
+            left = verifySequenceOfBST(sequence,start,i);
         }
 
         //判断右子树是不是二叉搜索树
         boolean right = true;
         if (i > 0) {
-            right = verifySquenceOfBST(sequence,i,j);
+            right = verifySequenceOfBST(sequence,i,j);
         }
 
         //返回 子树是否为二叉搜索树的与结果
@@ -62,7 +64,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] arr = {5,7,8,9,11,10,8};
-        System.err.println(solution.verifySquenceOfBST(arr,0,arr.length));
+        System.err.println(solution.verifySequenceOfBST(arr,0,arr.length));
     }
 
 }

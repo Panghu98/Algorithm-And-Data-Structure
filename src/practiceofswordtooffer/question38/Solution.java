@@ -8,7 +8,8 @@ import java.util.TreeSet;
 /**
  * @author dengg
  */
-public class Solution {
+public class
+Solution {
 
     public ArrayList<String> permutation(String str) {
 
@@ -23,6 +24,7 @@ public class Solution {
 
 
     private static void helper(char[] s, int i, Set<String> set) {
+        //如果长度是字符串的长度，则添加
         if (i == s.length) {
             set.add(String.valueOf(s));
         }

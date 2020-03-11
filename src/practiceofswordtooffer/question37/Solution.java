@@ -88,6 +88,16 @@ public class Solution {
         n4.left = n8;
         n4.right = n9;
 
+        /**
+         *         1
+         *       /  \
+         *      2    3
+         *     / \  / \
+         *    4  5  6   7
+         *   / \
+         *  8   9
+         */
+
         String result = solution.serialize(n1);
         System.out.println(result);
         System.out.println();

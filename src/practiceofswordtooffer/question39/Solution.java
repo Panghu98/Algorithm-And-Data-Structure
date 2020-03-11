@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class Solution {
 
-    public int MoreThanHalfNum_Solution(int [] array) {
+    public int MoreThanHalfNum_Solution(int[] array) {
         if (array == null || array.length ==0) {
             return 0;
         }
@@ -15,6 +15,8 @@ public class Solution {
         if (array.length == 1) {
             return array[0];
         }
+
+        // HashMap并没有树化，查询效率基本为O(1)
         HashMap<Integer,Integer> map = new HashMap<>(16);
         for (int i = 0; i < array.length; i++) {
             Integer value = map.get(array[i]);

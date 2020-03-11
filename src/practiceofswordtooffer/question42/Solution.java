@@ -1,13 +1,15 @@
 package practiceofswordtooffer.question42;
 
+import org.junit.Test;
+
 /**
  * @author dengg
  *
- *  //TODO 不是很明白为什么这么做
+ *  `
  */
 public class Solution {
 
-    public int FindGreatestSumOfSubArray(int[] array) {
+    public int findGreatestSumOfSubArray(int[] array) {
         int length = array.length;
         int[] dp = new int[length];
 
@@ -21,7 +23,7 @@ public class Solution {
                 //相加的值大于当前元素的值
                 dp[i] = newMax;
             }else {
-                //相加的值小于当前元素的值
+                //相加的值小于当前元素的值 -- 前面的数值和小于0
                 dp[i] = array[i];
             }
 
@@ -32,6 +34,13 @@ public class Solution {
         }
 
         return max;
+    }
+
+    @Test
+    public void test() {
+        int[] arr = {1,-1,2,-2,3,4,-3,4,-5};
+        int result = findGreatestSumOfSubArray(arr);
+        System.out.println(result);
     }
 
 }
