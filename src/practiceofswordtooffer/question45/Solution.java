@@ -1,5 +1,7 @@
 package practiceofswordtooffer.question45;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 
 /**
@@ -11,7 +13,7 @@ public class Solution {
     public String PrintMinNumber(int [] numbers) {
         int n;
         StringBuilder s = new StringBuilder();
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         n = numbers.length;
 
         for (int i = 0; i < n; i++) {
@@ -33,9 +35,9 @@ public class Solution {
         return s.toString();
     }
 
-    public static void main(String[] args) {
-        String str1 = "avdf";
-        String str2 = "avcd";
-        System.err.println(str1.compareTo(str2));
+    @Test
+    public  void text() {
+        int[] arr = {3,32,321};
+        System.out.println(PrintMinNumber(arr));
     }
 }

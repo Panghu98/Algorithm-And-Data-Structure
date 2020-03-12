@@ -7,12 +7,7 @@ public class Solution {
 
     public static void main(String[] args)
     {
-        //9
-        System.out.println(digitAtIndex(9));
-        //数字99的最后一位：9
-        System.out.println(digitAtIndex(189));
-        //数字100的第一位：1
-        System.out.println(digitAtIndex(190));
+        System.out.println(digitAtIndex(2896));
     }
 
     private static int digitAtIndex(int index)
@@ -53,9 +48,9 @@ public class Solution {
 
     private static int digitAtIndex(int index, int digits)
     {
-        //对应的数值
+        //对应的数值 获取对应的数值
         int number = beginNumberFor(digits) + index / digits;
-        //从数值右边开始算的位置
+        //从数值右边开始算的位置,计算是number的第几个数字
         int indexFromRight = digits - index % digits;
         //去除右边的indexFromRight-1个数字
         for (int i = 1; i < indexFromRight; i++)

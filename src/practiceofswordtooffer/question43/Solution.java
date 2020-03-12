@@ -1,7 +1,11 @@
 package practiceofswordtooffer.question43;
 
+import org.junit.Test;
+
 /**
  * @author dengg
+ *
+ * 利用排列组合的思想
  */
 public class Solution {
 
@@ -14,6 +18,11 @@ public class Solution {
             count += (a + 8) / 10 * i + ((a % 10 == 1) ? b + 1 : 0);
         }
         return count;
+    }
+
+    @Test
+    public void test() {
+        System.err.println(NumberOf1Between1AndN_Solution(99));
     }
 
 }
