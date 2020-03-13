@@ -36,6 +36,7 @@ public class Solution {
                     //动态规划
                     if (i < number.length() -2) {
                         // 这里很奇妙,动态规划的特性
+                        // 考虑 爬楼梯问题，一次只能走一格或者两格
                         count += counts[i+2];
                     }else {
                         //该组合是右边界组合则+1
