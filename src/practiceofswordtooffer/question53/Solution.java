@@ -9,7 +9,7 @@ public class Solution {
         int number = 0;
         if (array != null && array.length !=0 ){
             int first = getFirstK(array,k,0,array.length-1);
-            int last = getFirstK(array,k,0,array.length-1);
+            int last = getLastK(array,k,0,array.length-1);
 
             if (first > -1 && last > -1) {
                 number = last-first-1;
@@ -55,20 +55,22 @@ public class Solution {
         int middleData = array[middle];
 
         if (middleData == k) {
-            if (middle < array.length-1 && array[middle - 1] != k) {
+            if (middle < array.length-1 && array[middle + 1] != k) {
                 return middle;
             } else if (middle == array.length -1) {
                 return middle;
             } else {
                 start = middle+1;
             }
+        }else {
+            if (middleData > k){
+                end = middle-1;
+            }else {
+                start = middle+1;
+            }
         }
 
-        if (middleData > k){
-            end = middle-1;
-        }else {
-            start = middle+1;
-        }
+
 
         return getFirstK(array, k, start, end);
     }

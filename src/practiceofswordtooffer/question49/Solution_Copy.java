@@ -21,7 +21,7 @@ public class Solution_Copy {
         //第一个丑数是1
         result[0] = 1;
         for (int i = 0; i < index; i++) {
-            //丑数一定是三个潜在最小丑数中的最小值
+            //最新的丑数一定是三个潜在最小丑数中的最小值 *2、3、5的结果
             result[i] = Math.min(result[p2]*2, Math.min(result[p3]*3, result[p5]*5));
 
             //判断是那个最小因子
@@ -36,7 +36,7 @@ public class Solution_Copy {
             }
         }
 
-        return result[index-1   ];
+        return result[index-1];
     }
 
 }

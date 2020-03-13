@@ -31,7 +31,8 @@ public class Solution2 {
         if(left - right <(-1) || left - right > 1) {
             return -1;
         } else {
-            return 1+(left > right?left:right);
+            //这一步很关键，计算深度
+            return 1+(Math.max(left, right));
         }
     }
 
