@@ -7,7 +7,7 @@ public class Solution {
     //3.统计排序之后的数组中相邻数字之间的空缺总数，如果空缺总数小于等于0的个数，则数组是连续的，否则是不连续的
     //4.注意：如果数组中非0数字重复出现，则肯定是不连续的
 
-    public boolean isContinious(int[] numbers) {
+    public boolean isContinuous(int[] numbers) {
         //验证参数的合法性
         if (numbers == null ||numbers.length == 0) {
             throw new IllegalArgumentException("参数不合法");

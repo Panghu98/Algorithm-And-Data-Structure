@@ -35,7 +35,7 @@ public class Solution_Copy {
         // 进行翻转求值
         for (int k = 2; k <= number; k++) {
             for (int i = number; i <= maxValue * k ; i++) {
-                for (int j = 1; j <= maxValue && j <= i; j++) {
+                for (int j = 1; j <= maxValue && j < i; j++) {
                     probabilities[1-flag][i] += probabilities[flag][i-j];
                 }
             }
@@ -46,7 +46,7 @@ public class Solution_Copy {
         for (int i = number; i <= maxValue * number; i++) {
             double ratio = (double) probabilities[flag][i] / total;
             System.out.println(i);
-            DecimalFormat df = new DecimalFormat("0.000000");
+            DecimalFormat df = new DecimalFormat("0.00000000000");
             System.out.println(df.format(ratio));
         }
 
@@ -54,6 +54,6 @@ public class Solution_Copy {
 
     @Test
     public void test() {
-        printProbability(2);
+        printProbability(10);
     }
 }
