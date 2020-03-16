@@ -1,25 +1,30 @@
 package practiceofswordtooffer.question63;
 
+/**
+ * 解法描述：假设diff(i)为当前卖出价的最大利润，就找前面的最小数
+ */
 public class Solution {
 
     public int maxDiff(int[] numbers) {
-        //特殊参数处理
-        if (numbers == null || numbers.length == 0) {
-            return 0;
+        if (numbers == null || numbers.length < 2) {
+            return -1;
         }
-        int maxNum = numbers[0];
-        int minNum = numbers[0];
 
-        for (int i = 0; i < numbers.length; i++) {
+        int min = numbers[0];
+        int maxDiff = numbers[1] - min;
+        for (int i = 2; i < numbers.length; i++) {
 
-            if (numbers[i] > maxNum) {
-                maxNum = numbers[i];
-            } else if (numbers[i] < minNum) {
-                minNum = numbers[i];
+            // 寻找最小值
+            if (numbers[i-1] < min) {
+                min = numbers[i -1];
             }
+
+            // 计算最大利润
+            int currentDiff = numbers[i] - min;
+            maxDiff = Math.max(currentDiff,maxDiff);
         }
 
-        return maxNum-minNum;
+        return maxDiff;
     }
 
 }
