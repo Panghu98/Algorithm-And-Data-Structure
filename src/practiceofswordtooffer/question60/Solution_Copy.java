@@ -4,7 +4,13 @@ import org.junit.Test;
 
 import java.text.DecimalFormat;
 
-public class Solution {
+/**
+ * @author: panghu
+ * @Description:
+ * @Date: Created in 19:28 2020/3/16
+ * @Modified By:
+ */
+public class Solution_Copy {
     /*
      * 把n个骰子仍在地上，所有骰子朝上一面的点数之和为s,输入n,打印出s的所有可能出现的概率
      */
@@ -20,24 +26,20 @@ public class Solution {
         probabilities[0] = new int[maxValue * number + 1];
         probabilities[1] = new int[maxValue * number + 1];
 
-        int  flag = 0;
+        int flag = 0;
 
         for (int i = 1; i <= maxValue; i++) {
             probabilities[flag][i] = 1;
         }
 
-        // 为什么初始化k为2呢，因为上面的只有一个骰子的情况已经说明了
+        // 进行翻转求值
         for (int k = 2; k <= number; k++) {
-            // 数值范围内的求值
-            for (int i = number; i <= maxValue * k; ++i) {
-                // 获取每个数值的可能性
-                for (int j = 1; j <= i && j <= maxValue; ++j) {
-                    probabilities[1 - flag][i] += probabilities[flag][i - j];
+            for (int i = number; i <= maxValue * k ; i++) {
+                for (int j = 1; j <= maxValue && j <= i; j++) {
+                    probabilities[1-flag][i] += probabilities[flag][i-j];
                 }
             }
-            // 切换数组
-            flag = 1 - flag;
-
+            flag = 1- flag;
         }
 
         double total = Math.pow(maxValue, number);
@@ -54,5 +56,4 @@ public class Solution {
     public void test() {
         printProbability(2);
     }
-
 }

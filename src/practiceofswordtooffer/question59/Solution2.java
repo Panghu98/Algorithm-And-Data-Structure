@@ -25,6 +25,7 @@ public class Solution2 {
         data.addLast(curData);
 
         //当最大值队列不为空切最大值小于新加入的值的时候，删除这一步在实质上就相当于替换
+        // 进行循环删除
         while(!maximum.isEmpty() && maximum.getLast().number<number) {
             maximum.removeLast();
         }

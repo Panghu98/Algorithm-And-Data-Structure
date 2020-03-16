@@ -23,6 +23,8 @@ public class Solution1 {
                 }else {
                     //滑动窗口内的最大数值
                     int maxNum = num[i];
+
+                    // 还是避免不了遍历滑动窗口
                     for (int j = i-1; j > i-size; j--) {
                         maxNum = Math.max(maxNum, num[j]);
                     }
@@ -30,6 +32,8 @@ public class Solution1 {
                     //添加滑动窗口内的最大值
                     deque.addLast(maxNum);
                 }
+
+                // 2,3,4,2,6,2,5,1
 
                 //长度小于滑动窗口的长度的时候
             }else{
