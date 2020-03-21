@@ -21,7 +21,7 @@ public class Solution {
 
     @Test
     public void test() {
-        add(5,7);
+        System.out.println(add(5,17));
     }
 
 }
