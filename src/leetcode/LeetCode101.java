@@ -22,7 +22,7 @@ public class LeetCode101 {
 
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
-            return true;
+            return true ;
         }
 
         return helpJudge(root.left,root.right);
