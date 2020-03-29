@@ -1,5 +1,7 @@
 package leetcode_tencent;
 
+import org.junit.Test;
+
 /**
  * @author: panghu
  * @Description:
@@ -115,5 +117,12 @@ public class Solution4 {
             }
         }
         return 0.0;
+    }
+
+    @Test
+    public void test() {
+        int[] arrBig = new int[]{1,3,5,7,9,11,12,13};
+        int[] arrSmall = new int[]{2,4,6,8,10,14,16};
+        findMedianSortedArrays(arrBig,arrSmall);
     }
 }
