@@ -49,6 +49,7 @@ public class HeapSort {
 
      void heapSort(int[] arr){
 
+         // 8,23,45,9,40,73,12,13,72
         //对数组进行建堆操作,就是从最后一个非叶子节点进行筛选的结果
         //(arr.length-1)/2   父节点
         for (int i = (arr.length-1)/2;   i>0;  i--){
