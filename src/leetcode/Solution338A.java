@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-public class Solution338A {
+public class    Solution338A {
 
 
     /**
