@@ -22,6 +22,9 @@ public class Solution {
         result[0] = 1;
         for (int i = 1; i < index; i++) {
             //丑数一定是三个潜在最小丑数中的最小值，
+
+            // 我觉得这里是非常巧妙的
+            // p2,p3,p5分别指向数组中了之前相乘的最小数
             result[i] = Math.min(result[p2]*2, Math.min(result[p3]*3, result[p5]*5));
 
             //为了防止重复需要三个if都能够走到

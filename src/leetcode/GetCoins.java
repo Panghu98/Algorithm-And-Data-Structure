@@ -43,6 +43,7 @@ public class GetCoins {
 
     @Test
     public void test() {
-        coinChange(new int[]{1,2,5},18);
+        int value = coinChange(new int[]{1,2,5},18);
+        System.err.println(value);
     }
 }
