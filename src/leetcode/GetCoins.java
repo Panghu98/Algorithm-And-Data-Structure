@@ -41,6 +41,7 @@ public class GetCoins {
         return memo[amount]==Integer.MAX_VALUE ?-1:memo[amount];
     }
 
+
     @Test
     public void test() {
         int value = coinChange(new int[]{1,2,5},18);
