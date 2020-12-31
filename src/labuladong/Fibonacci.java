@@ -37,12 +37,34 @@ public class Fibonacci {
 
     }
 
+    public static int fibonacci3(int n) {
+        if (n == 0) {
+            return 0;
+        }
+
+        if(n == 1) {
+            return 1;
+        }
+
+        int funcResult1 = 1,funcResult2=0,result = 0;
+        for(int i=2;i <= n; i++) {
+            // 较大数
+            result = (funcResult1 + funcResult2)%1000000007;
+            funcResult2 = funcResult1;
+            funcResult1 = result;
+        }
+
+        return funcResult1;
+
+    }
+
+
     public static void main(String[] args) {
 
-        int n = 20;
+        int n = 45;
 
         int[] men = new int[n+1];
-        System.err.println(fibonacci2(n));
+        System.err.println(fibonacci3(n));
         System.out.println(fibonacci(n,men));
     }
 }
