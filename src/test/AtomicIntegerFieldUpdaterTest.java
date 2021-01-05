@@ -1,5 +1,7 @@
 package test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 public class AtomicIntegerFieldUpdaterTest {
@@ -9,10 +11,15 @@ public class AtomicIntegerFieldUpdaterTest {
     public static void main(String[] args) {
         //设置柯南的年龄为10岁
         User conan = new User("conan",10);
+
+
         //柯南长了一岁，但是仍然会输出旧的年龄
         System.out.println(updater.getAndIncrement(conan));
         //输出柯南现在的年龄
         System.out.println(updater.get(conan));
+
+        List<User> list = new ArrayList<>();
+
     }
 
 

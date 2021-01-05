@@ -28,6 +28,7 @@ public class Leetcode110 {
     }
 
     private int depth(TreeNode root) {
+
         if (root == null) {
             return 0;
         }else {
@@ -35,5 +36,6 @@ public class Leetcode110 {
             return Math.max(depth(root.left),depth(root.right)) + 1;
         }
     }
+
 
 }
