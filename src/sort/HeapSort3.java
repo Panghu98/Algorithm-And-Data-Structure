@@ -78,9 +78,11 @@ public class HeapSort3 {
             }
             //比较父结点的值与孩子中较大的值，并确定最大值的索引
             if (arr[index] > arr[largestIndex]) {
+                // 这里的index是滑动的
                 largestIndex = index;
             }
             //如果父结点索引是最大值的索引，那已经是大根堆了，则退出循环
+            // 这里的判定结束就是定点已经是最大的了
             if (index == largestIndex) {
                 break;
             }
@@ -95,6 +97,34 @@ public class HeapSort3 {
 
     }
 
+    private void heapify(int[] arr, int size,int index) {
+        int leftIndex = index * 2 + 1;
+        int rightIndex = index * 2 + 2;
+
+        while(leftIndex < size) {
+
+
+            int largestIndex = leftIndex;
+            if (arr[rightIndex] > arr[leftIndex] && rightIndex < size) {
+                largestIndex = rightIndex;
+            }
+
+            // 结束
+            if (arr[index] > arr[largestIndex]) {
+                break;
+            }
+
+            //父结点不是最大值，与孩子中较大的值交换
+            swap(arr, largestIndex, index);
+            //将索引指向孩子中较大的值的索引
+            index = largestIndex;
+            //重新计算交换之后的孩子的索引
+            leftIndex = 2 * index + 1;
+            rightIndex = 2 * index + 2;
+
+        }
+    }
+
 
     public void heapSort(int[] arr) {
         //构造大根堆
@@ -105,7 +135,7 @@ public class HeapSort3 {
             swap(arr, 0, size - 1);
             size--;
             //构造大根堆
-            heapify(arr, size);
+            heapify(arr, size,0);
 
         }
 
