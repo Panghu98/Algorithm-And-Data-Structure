@@ -77,13 +77,15 @@ public class Leetcode51 {
             }
         }
 
+        // todo ,判定不能在一条斜线上
         return true;
     }
 
 
     @Test
     public void test() {
-        System.out.println(solveNQueens(2));
+        List<List<String>> x = solveNQueens(3);
+        x.forEach(System.out::println);
     }
 
 }
