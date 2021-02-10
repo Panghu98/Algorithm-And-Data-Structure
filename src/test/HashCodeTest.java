@@ -3,7 +3,8 @@ package test;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class HashCodeTest {
+public class HashCodeTest extends MergeSort {
+
 
 
     public static void main(String[] args) {
