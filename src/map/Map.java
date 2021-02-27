@@ -10,4 +10,6 @@ public interface Map<K,V> {
     int getSize();
     boolean isEmpty();
 
+    public class Entry<T, T1> {
+    }
 }

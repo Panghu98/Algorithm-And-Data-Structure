@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Solution1 {
+
+
+
     //2,3,4,2,6,2,5,1
     public ArrayList<Integer> maxInWindows(int[] num, int size) {
 

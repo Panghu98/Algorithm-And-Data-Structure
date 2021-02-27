@@ -57,6 +57,30 @@ public class LeetCode338 {
         return result/2;
     }
 
+    public int[] countBits2(int num) {
+        int[] ans = new int[num + 1];
+        int i = 0, b = 1;
+        // [0, b) is calculated
+        while (b <= num) {
+            // generate [b, 2b) or [b, num) from [0, b)
+            while (i < b && i + b <= num) {
+                ans[i + b] = ans[i] + 1;
+                ++i;
+            }
+            i = 0;   // reset i
+            b <<= 1; // b = 2b
+        }
+
+        return ans;
+    }
+
+    public int[] countBits3(int num) {
+        int[] ans = new int[num + 1];
+        for (int i = 1; i <= num; ++i)
+            ans[i] = ans[i >> 1] + (i & 1); // x / 2 is x >> 1 and x % 2 is x & 1
+        return ans;
+    }
+
     public static void main(String[] args) {
         LeetCode338 solution = new LeetCode338();
         System.err.println(Arrays.toString(solution.countBits(5)));
