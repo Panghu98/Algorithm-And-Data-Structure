@@ -30,7 +30,7 @@ import org.junit.Test;
  *
  * @Modified By:
  */
-public class LeetCode516 {
+public class LeetCode1143 {
     public int longestCommonSubsequence(String text1, String text2) {
         // 动态规划数组
 //        int[][] dp = new int[text1.length()+1][text2.length()+1];

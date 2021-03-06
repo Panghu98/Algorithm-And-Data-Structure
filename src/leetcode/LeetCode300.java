@@ -44,7 +44,6 @@ public class LeetCode300 {
             }
             // 更新当前的dp
             dp[i] = maxans + 1;
-            System.err.println("dp[i]:"+dp[i] + " maxans:" + maxans);
             maxans = dp[i];
         }
 

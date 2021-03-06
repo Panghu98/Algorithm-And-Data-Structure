@@ -5,7 +5,7 @@ import org.junit.Test;
 /**
  * @author: panghu
  * @Description:
- * 给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。
+ * 给定两个单词 word1 和 word2，计算出将 word1  转换成 word2 所使用的最少操作数 。
  *
  * 你可以对一个单词进行如下三种操作：
  *
@@ -63,6 +63,10 @@ public class leetcode72 {
         }
         return dp[n1][n2];
     }
+
+//    public int minDistance2(String word1, String word2) {
+//
+//    }
 
     @Test
     public void test() {
