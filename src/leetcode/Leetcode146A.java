@@ -57,7 +57,7 @@ class LRUCache {
             return -1;
         }
 
-        // 当亲
+        // 当存在这个节点的时候
         move2Head(listNode);
         return listNode.value;
     }
@@ -96,7 +96,7 @@ class LRUCache {
     private void addToHead(ListNode currentNode) {
         ListNode headNext = head.next;
         headNext.pre = currentNode;
-        currentNode.next = currentNode;
+        currentNode.next = headNext;
         head.next = currentNode;
         currentNode.pre = head;
     }
