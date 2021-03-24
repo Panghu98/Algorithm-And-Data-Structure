@@ -36,6 +36,27 @@ import org.junit.Test;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @Date: Created in 22:07 2020/3/17
  * @Modified By:
+ *
+ * dp[i][j] 代表 word1 到 i 位置转换成 word2 到 j 位置需要最少步数
+ *
+ * 所以，
+ *
+ * 当 word1[i] == word2[j]，dp[i][j] = dp[i-1][j-1]；
+ *
+ * 当 word1[i] != word2[j]，dp[i][j] = min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1]) + 1
+ *
+ * 其中，dp[i-1][j-1] 表示替换操作，dp[i-1][j] 表示删除操作，dp[i][j-1] 表示插入操作。
+ *
+ * 注意，针对第一行，第一列要单独考虑，我们引入 '' 下图所示：
+ *
+ * 作者：powcai
+ * 链接：https://leetcode-cn.com/problems/edit-distance/solution/zi-di-xiang-shang-he-zi-ding-xiang-xia-by-powcai-3/
+ * 来源：力扣（LeetCode）
+ * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ *
+ * 第一行，是 word1 为空变成 word2 最少步数，就是插入操作
+ *
+ * 第一列，是 word2 为空，需要的最少步数，就是删除操作
  */
 public class leetcode72 {
     public int minDistance(String word1, String word2) {
@@ -57,6 +78,7 @@ public class leetcode72 {
                     // 也就是对应dp数组中的值相等
                     dp[i][j] = dp[i - 1][j - 1];
                 } else {
+                    // dp[i - 1][j - 1] 替换 dp[i][j - 1]插入 //  dp[i - 1][j] 删除
                     dp[i][j] = Math.min(Math.min(dp[i - 1][j - 1], dp[i][j - 1]), dp[i - 1][j]) + 1;
                 }
             }
