@@ -35,11 +35,36 @@ public class Solution {
 
         return max;
     }
+    public int maxSubArray(int[] nums) {
+
+        int pre = 0;
+        int max = Integer.MIN_VALUE;
+
+        int  cur = 0;
+
+        for (int num : nums) {
+            // 前面的值的计算
+            if (pre < 0) {
+                cur = num;
+            } else {
+                cur = num + pre;
+            }
+
+            if (cur > max) {
+                max = cur;
+            }
+
+            pre = cur;
+
+        }
+
+        return max;
+    }
 
     @Test
     public void test() {
-        int[] arr = {1,-1,2,-2,3,4,-3,4,-5};
-        int result = findGreatestSumOfSubArray(arr);
+        int[] arr = {1,2,-2,4,5};
+        int result = maxSubArray(arr);
         System.out.println(result);
     }
 
